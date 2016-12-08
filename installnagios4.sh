@@ -23,15 +23,19 @@ cd nagios-4.2.4
 
 make all
 
-make install
+make install 
 
-make install-init
+make install-init 
 
-make install-config
+make install-commandmode 
 
-make install-commandmode
+make install-config 
 
-make install-webconf
+make install-webconf 
+
+make install-exfoliation 
+
+make install-classicui
 
 htpasswd -c /etc/nagios/etc/htpasswd.users nagiosadmin
 
