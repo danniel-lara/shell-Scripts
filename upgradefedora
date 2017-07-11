@@ -1,0 +1,23 @@
+#!/bin/bash
+
+#Update Fedora System Packages
+
+dnf upgrade --refresh -y
+
+#Install system upgrade DNF plugin
+
+dnf install dnf-plugin-system-upgrade -y
+
+#Download the upgrade packages
+#If any of the packages have unsatisfied dependencies, 
+#Fedora will refuse the upgrade process. 
+#You can use --allowerasing option with above command, 
+#This will remove any packages which are broken. 
+#Watch the output of the command to check which packages are getting removed from the system, 
+#So you can install again.
+
+dnf system-upgrade download --refresh --releasever=26 --allowerasing -y
+
+#Start upgrade process
+
+dnf system-upgrade reboot
